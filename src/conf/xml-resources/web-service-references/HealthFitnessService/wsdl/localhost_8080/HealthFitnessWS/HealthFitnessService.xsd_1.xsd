@@ -4,6 +4,10 @@
 
 <xs:element name="bodyFatPercentageResponse" type="tns:bodyFatPercentageResponse"/>
 
+<xs:element name="calculateBMI" type="tns:calculateBMI"/>
+
+<xs:element name="calculateBMIResponse" type="tns:calculateBMIResponse"/>
+
 <xs:element name="calculateCaloriesBurnRate" type="tns:calculateCaloriesBurnRate"/>
 
 <xs:element name="calculateCaloriesBurnRateResponse" type="tns:calculateCaloriesBurnRateResponse"/>
@@ -78,6 +82,19 @@
 </xs:complexType>
 
 <xs:complexType name="calculateCaloriesBurnRateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculateBMI">
+<xs:sequence>
+<xs:element name="weight" type="xs:double"/>
+<xs:element name="heightCm" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculateBMIResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:double"/>
 </xs:sequence>

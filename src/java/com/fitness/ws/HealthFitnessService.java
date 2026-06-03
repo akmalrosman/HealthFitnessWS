@@ -67,6 +67,23 @@ public class HealthFitnessService {
         
         return info.toString();
     }
+    
+    
+    @WebMethod(operationName = "calculateBMI")
+    public double calculateBMI(
+            @WebParam(name = "weight") double weight, 
+            @WebParam(name = "heightCm") double heightCm) {
+        
+        if (weight <= 0 || heightCm <= 0) {
+            throw new WebServiceException("SOAP FAULT: Invalid weight or height.");
+        }
+ 
+        double heightMeters = heightCm / 100.0;
+
+        double bmi = weight / (heightMeters * heightMeters);
+
+        return Math.round(bmi * 100.0) / 100.0;
+    }
 
 
     /**

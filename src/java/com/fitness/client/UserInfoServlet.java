@@ -138,8 +138,8 @@ public class UserInfoServlet extends HttpServlet {
             out.println("<input type='submit' class='btn btn-blue' value='Calculate BMI'>");
             out.println("</form>");
             out.println("</div>");
-
-            // Body Fat Module - CLEANED UP DUPLICATE
+            
+            // Body Fat Module
             out.println("<div class='module-card card-fat'>");
             out.println("<div><h3>🩸 Body Fat Percentage</h3>");
             out.println("<p>Analyse your body composition to estimate the total percentage of body fat using biometric algorithms.</p></div>");
