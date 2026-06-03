@@ -76,11 +76,11 @@ public class UserInfoServlet extends HttpServlet {
             out.println(".module-card p { font-size: 0.9em; color: #777; margin-bottom: 20px; line-height: 1.4; }");
             
             // BMI (Blue)
-            out.println(".card-bmi { border-top: 5px solid #3498DB; }");
+            out.println(".card-bmi { border: 2px solid #3498DB; border-top: 6px solid #3498DB; background-color: #f4f9fd; }");
             out.println(".card-bmi h3 { color: #3498DB; }");
             
             // Body Fat (Purple)
-            out.println(".card-fat { border-top: 5px solid #9B59B6; }");
+            out.println(".card-fat { border: 2px solid #9B59B6; border-top: 6px solid #9B59B6; background-color: #f9f5fc; }");
             out.println(".card-fat h3 { color: #9B59B6; }");
             
             // Burn Rate (Orange)
@@ -88,7 +88,7 @@ public class UserInfoServlet extends HttpServlet {
             out.println(".card-burn h3 { color: #E67E22; }");
             
             // Deficit (Red)
-            out.println(".card-deficit { border-top: 5px solid #E74C3C; }");
+            out.println(".card-deficit { border: 2px solid #E74C3C; border-top: 6px solid #E74C3C; background-color: #fdf5f5; }");
             out.println(".card-deficit h3 { color: #E74C3C; }");
             
             // Protein (Green)
@@ -100,10 +100,7 @@ public class UserInfoServlet extends HttpServlet {
             out.println(".btn { color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 1em; font-weight: bold; transition: opacity 0.3s; margin-top: auto; }");
             out.println(".btn:hover { opacity: 0.85; }");
             out.println(".btn-blue { background-color: #3498DB; }");
-            
-            // RESOLVED GIT CONFLICT HERE
             out.println(".btn-purple { background-color: #9B59B6; }"); 
-            
             out.println(".btn-orange { background-color: #E67E22; }");
             out.println(".btn-red { background-color: #E74C3C; }");
             out.println(".btn-green { background-color: #27AE60; }");
@@ -138,7 +135,6 @@ public class UserInfoServlet extends HttpServlet {
             out.println("</form>");
             out.println("</div>");
        
-     
             // Body Fat Module
             out.println("<div class='module-card card-fat'>");
             out.println("<div><h3>🩸 Body Fat Percentage</h3>");
@@ -147,7 +143,6 @@ public class UserInfoServlet extends HttpServlet {
             out.println("<input type='submit' class='btn btn-purple' value='Calculate Body Fat'>");
             out.println("</form>");
             out.println("</div>");
-            
 
             // Calories Burn Rate Module
             out.println("<div class='module-card card-burn'>");
@@ -164,7 +159,6 @@ public class UserInfoServlet extends HttpServlet {
             out.println("<input type='submit' class='btn btn-orange' value='Calculate Burn Rate'>");
             out.println("</form>");
             out.println("</div>"); 
-            
 
             // Calorie Deficit Module
             out.println("<div class='module-card card-deficit'>");
@@ -189,7 +183,6 @@ public class UserInfoServlet extends HttpServlet {
             out.println("<input type='submit' class='btn btn-red' value='Calculate Deficit'>");
             out.println("</form>");
             out.println("</div>"); 
-            
 
             // Protein Intake Module
             out.println("<div class='module-card card-protein'>");
