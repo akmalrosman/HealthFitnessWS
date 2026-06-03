@@ -75,7 +75,6 @@ public class UserInfoServlet extends HttpServlet {
             out.println(".module-card h3 { margin: 0 0 10px 0; font-size: 1.2em; display: flex; align-items: center; gap: 8px; }");
             out.println(".module-card p { font-size: 0.9em; color: #777; margin-bottom: 20px; line-height: 1.4; }");
             
-            // -- Module Card Color --
             // BMI (Blue)
             out.println(".card-bmi { border-top: 5px solid #3498DB; }");
             out.println(".card-bmi h3 { color: #3498DB; }");
