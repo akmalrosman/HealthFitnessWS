@@ -36,7 +36,7 @@ public class HealthFitnessService {
         }
     }
 
-    // Display User Info - UPDATED WITH ALL 8 PARAMETERS TO MATCH USERINFOSERVLET
+    // Display User Info
     @WebMethod(operationName = "displayUserInfo")
     public String displayUserInfo(
             @WebParam(name = "name") String name,
@@ -68,8 +68,7 @@ public class HealthFitnessService {
         return info.toString();
     }
 
-<<<<<<< HEAD
-=======
+
     /**
      * Body Fat Percentage 
      */
@@ -97,7 +96,7 @@ public class HealthFitnessService {
         
         return Math.round(bodyFat * 100.0) / 100.0;
     }
->>>>>>> origin/MannnBodyFat
+
 
     /**
      * Body Calories Burn Rate
@@ -129,7 +128,9 @@ public class HealthFitnessService {
         return Math.round(tdee * 100.0) / 100.0;
     }
 
-    // Module: Calorie Deficit Engine (Adam + Paan) - Updated for Target Weight
+    /**
+     * Calories Deficit
+     */
     @WebMethod(operationName = "calculateCaloriesDeficit")
     public String calculateCaloriesDeficit(
             @WebParam(name = "icNumber") String icNumber,
@@ -146,7 +147,7 @@ public class HealthFitnessService {
         
         int age = determineAge(icNumber);
         
-        // 1. Calculate BMR (Current Baseline)
+        // Calculate BMR
         double bmr;
         if (gender != null && gender.equalsIgnoreCase("male")) {
             bmr = (10 * currentWeight) + (6.25 * height) - (5 * age) + 5;
@@ -154,10 +155,10 @@ public class HealthFitnessService {
             bmr = (10 * currentWeight) + (6.25 * height) - (5 * age) - 161;
         }
 
-        // 2. Calculate Maintenance Energy (TDEE)
+        // Calculate Maintenance Energy (TDEE)
         double tdee = bmr * activityFactor;
         
-        // 3. Dynamic Target Weight Calculation Logic
+        // Dynamic Target Weight Calculation Logic
         double weightDifference = currentWeight - targetWeight;
         
         // If user is already at their target weight
@@ -170,7 +171,7 @@ public class HealthFitnessService {
         double totalCalorieRequirement = weightDifference * 7700.0;
         double dailyDeficitSurplus = (totalCalorieRequirement / weeks) / 7.0;
         
-        // 4. Safety Guardrails (Sustainable weekly rate validation)
+        // Safety Guardrails (Sustainable weekly rate validation)
         double weeklyRate = Math.abs(weightDifference) / weeks;
         if (weeklyRate > 1.0) {
             return "Warning: Aggressive timeline! Losing/gaining " + String.format("%.2f", weeklyRate) 

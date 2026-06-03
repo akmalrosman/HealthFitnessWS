@@ -27,7 +27,7 @@ public class CaloriesBurnServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         try {
-            // 1. Get Data from Session
+            // Get Data from Session
             HttpSession session = request.getSession();
             Double weight = (Double) session.getAttribute("userWeight");
             Double height = (Double) session.getAttribute("userHeight");
@@ -40,14 +40,14 @@ public class CaloriesBurnServlet extends HttpServlet {
                 return;
             }
             
-            // 2. Get Activity Level from HTML Form
+            // Get Activity Level from HTML Form
             double activityMultiplier = Double.parseDouble(request.getParameter("activityMultiplier"));
             
-            // 3. Invoke SOAP Web Service
+            // Invoke SOAP Web Service
             HealthFitnessService port = service.getHealthFitnessServicePort();
             double burnRate = port.calculateCaloriesBurnRate(weight, height, age, gender, activityMultiplier);
             
-            // 4. Print Orange-Themed UI
+            // Print Orange-Themed UI
             out.println("<!DOCTYPE html><html><head><title>Calories Burn Rate Result</title>");
             out.println("<style>");
             out.println("body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #F4F7F6; color: #333; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }");

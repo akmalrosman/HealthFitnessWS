@@ -45,62 +45,17 @@ public interface HealthFitnessService {
     /**
      * 
      * @param icNumber
-     * @param currentWeight
-     * @param weeks
-     * @param gender
-     * @param targetWeight
-     * @param activityLevel
-     * @param height
      * @return
-     *     returns java.lang.String
+     *     returns int
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateCaloriesDeficit", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesDeficit")
-    @ResponseWrapper(localName = "calculateCaloriesDeficitResponse", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesDeficitResponse")
-    @Action(input = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesDeficitRequest", output = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesDeficitResponse")
-    public String calculateCaloriesDeficit(
+    @RequestWrapper(localName = "determineAge", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.DetermineAge")
+    @ResponseWrapper(localName = "determineAgeResponse", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.DetermineAgeResponse")
+    @Action(input = "http://ws.fitness.com/HealthFitnessService/determineAgeRequest", output = "http://ws.fitness.com/HealthFitnessService/determineAgeResponse")
+    public int determineAge(
         @WebParam(name = "icNumber", targetNamespace = "")
-        String icNumber,
-        @WebParam(name = "gender", targetNamespace = "")
-        String gender,
-        @WebParam(name = "currentWeight", targetNamespace = "")
-        double currentWeight,
-        @WebParam(name = "height", targetNamespace = "")
-        double height,
-        @WebParam(name = "activityLevel", targetNamespace = "")
-        double activityLevel,
-        @WebParam(name = "targetWeight", targetNamespace = "")
-        double targetWeight,
-        @WebParam(name = "weeks", targetNamespace = "")
-        int weeks);
-
-    /**
-     * 
-     * @param gender
-     * @param activityMultiplier
-     * @param weight
-     * @param age
-     * @param height
-     * @return
-     *     returns double
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "calculateCaloriesBurnRate", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesBurnRate")
-    @ResponseWrapper(localName = "calculateCaloriesBurnRateResponse", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesBurnRateResponse")
-    @Action(input = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateRequest", output = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateResponse")
-    public double calculateCaloriesBurnRate(
-        @WebParam(name = "weight", targetNamespace = "")
-        double weight,
-        @WebParam(name = "height", targetNamespace = "")
-        double height,
-        @WebParam(name = "age", targetNamespace = "")
-        int age,
-        @WebParam(name = "gender", targetNamespace = "")
-        String gender,
-        @WebParam(name = "activityMultiplier", targetNamespace = "")
-        double activityMultiplier);
+        String icNumber);
 
     /**
      * 
@@ -141,16 +96,85 @@ public interface HealthFitnessService {
     /**
      * 
      * @param icNumber
+     * @param currentWeight
+     * @param weeks
+     * @param gender
+     * @param targetWeight
+     * @param activityLevel
+     * @param height
      * @return
-     *     returns int
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "determineAge", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.DetermineAge")
-    @ResponseWrapper(localName = "determineAgeResponse", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.DetermineAgeResponse")
-    @Action(input = "http://ws.fitness.com/HealthFitnessService/determineAgeRequest", output = "http://ws.fitness.com/HealthFitnessService/determineAgeResponse")
-    public int determineAge(
+    @RequestWrapper(localName = "calculateCaloriesDeficit", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesDeficit")
+    @ResponseWrapper(localName = "calculateCaloriesDeficitResponse", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesDeficitResponse")
+    @Action(input = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesDeficitRequest", output = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesDeficitResponse")
+    public String calculateCaloriesDeficit(
         @WebParam(name = "icNumber", targetNamespace = "")
-        String icNumber);
+        String icNumber,
+        @WebParam(name = "gender", targetNamespace = "")
+        String gender,
+        @WebParam(name = "currentWeight", targetNamespace = "")
+        double currentWeight,
+        @WebParam(name = "height", targetNamespace = "")
+        double height,
+        @WebParam(name = "activityLevel", targetNamespace = "")
+        double activityLevel,
+        @WebParam(name = "targetWeight", targetNamespace = "")
+        double targetWeight,
+        @WebParam(name = "weeks", targetNamespace = "")
+        int weeks);
+
+    /**
+     * 
+     * @param gender
+     * @param weight
+     * @param age
+     * @param height
+     * @return
+     *     returns double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "bodyFatPercentage", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.BodyFatPercentage")
+    @ResponseWrapper(localName = "bodyFatPercentageResponse", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.BodyFatPercentageResponse")
+    @Action(input = "http://ws.fitness.com/HealthFitnessService/bodyFatPercentageRequest", output = "http://ws.fitness.com/HealthFitnessService/bodyFatPercentageResponse")
+    public double bodyFatPercentage(
+        @WebParam(name = "height", targetNamespace = "")
+        double height,
+        @WebParam(name = "weight", targetNamespace = "")
+        double weight,
+        @WebParam(name = "age", targetNamespace = "")
+        int age,
+        @WebParam(name = "gender", targetNamespace = "")
+        String gender);
+
+    /**
+     * 
+     * @param gender
+     * @param activityMultiplier
+     * @param weight
+     * @param age
+     * @param height
+     * @return
+     *     returns double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "calculateCaloriesBurnRate", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesBurnRate")
+    @ResponseWrapper(localName = "calculateCaloriesBurnRateResponse", targetNamespace = "http://ws.fitness.com/", className = "com.fitness.client.stub.CalculateCaloriesBurnRateResponse")
+    @Action(input = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateRequest", output = "http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateResponse")
+    public double calculateCaloriesBurnRate(
+        @WebParam(name = "weight", targetNamespace = "")
+        double weight,
+        @WebParam(name = "height", targetNamespace = "")
+        double height,
+        @WebParam(name = "age", targetNamespace = "")
+        int age,
+        @WebParam(name = "gender", targetNamespace = "")
+        String gender,
+        @WebParam(name = "activityMultiplier", targetNamespace = "")
+        double activityMultiplier);
 
 }

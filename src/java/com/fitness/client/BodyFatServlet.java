@@ -27,7 +27,7 @@ public class BodyFatServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         try {
-            // 1. Dapatkan data daripada Session yang disimpan di UserInfoServlet
+            // Dapatkan data daripada Session yang disimpan di UserInfoServlet
             HttpSession session = request.getSession();
             Double weight = (Double) session.getAttribute("userWeight");
             Double heightCm = (Double) session.getAttribute("userHeight");
@@ -35,20 +35,20 @@ public class BodyFatServlet extends HttpServlet {
             String gender = (String) session.getAttribute("userGender");
             String name = (String) session.getAttribute("userName");
             
-            // 2. Semak jika session kosong (contoh: user terus buka URL tanpa login)
+            // Semak jika session kosong (contoh: user terus buka URL tanpa login)
             if (weight == null || heightCm == null || age == null || gender == null) {
                 response.sendRedirect("index.html");
                 return;
             }
 
-            // 3. Tukar tinggi dari sentimeter (cm) kepada meter (m) untuk formula BMI dalam WS
+            // Tukar tinggi dari sentimeter (cm) kepada meter (m) untuk formula BMI dalam WS
             double heightInMeters = heightCm / 100.0;
             
-            // 4. Panggil Web Service
+            // Panggil Web Service
             HealthFitnessService port = service.getHealthFitnessServicePort();
             double bodyFatResult = port.bodyFatPercentage(heightInMeters, weight, age, gender);
             
-            // 5. Bina Antaramuka (UI) Keputusan
+            // Buat UI untuk result
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");

@@ -96,15 +96,15 @@ public class UserInfoServlet extends HttpServlet {
             out.println(".card-protein { border: 2px solid #27AE60; border-top: 6px solid #27AE60; background-color: #fafffb; }");
             out.println(".card-protein h3 { color: #27AE60; }");
             
-            // Forms & Buttons (FIX: Added input styling to keep things uniformly beautiful)
+            // Forms & Buttons 
             out.println("select, input[type='number'] { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95em; box-sizing: border-box; }");
             out.println(".btn { color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 1em; font-weight: bold; transition: opacity 0.3s; margin-top: auto; }");
             out.println(".btn:hover { opacity: 0.85; }");
             out.println(".btn-blue { background-color: #3498DB; }");
-<<<<<<< HEAD
-=======
-            out.println(".btn-purple { background-color: #9B59B6; }"); // Added Purple button style
->>>>>>> origin/MannnBodyFat
+            
+            // RESOLVED GIT CONFLICT HERE
+            out.println(".btn-purple { background-color: #9B59B6; }"); 
+            
             out.println(".btn-orange { background-color: #E67E22; }");
             out.println(".btn-red { background-color: #E74C3C; }");
             out.println(".btn-green { background-color: #27AE60; }");
@@ -139,20 +139,13 @@ public class UserInfoServlet extends HttpServlet {
             out.println("</form>");
             out.println("</div>");
 
-<<<<<<< HEAD
-            // Body Fat Module
-            out.println("<div class='module-card card-fat'>");
-            out.println("<div><h3>🩸 Body Fat Percentage</h3></div>");
-            out.println("<button class='btn btn-disabled' disabled>Pending Teammate</button>");
-=======
-            // Body Fat Module - AKTIFKAN MODUL ANDA DI SINI
+            // Body Fat Module - CLEANED UP DUPLICATE
             out.println("<div class='module-card card-fat'>");
             out.println("<div><h3>🩸 Body Fat Percentage</h3>");
             out.println("<p>Analyse your body composition to estimate the total percentage of body fat using biometric algorithms.</p></div>");
             out.println("<form action='BodyFatServlet' method='POST'>");
             out.println("<input type='submit' class='btn btn-purple' value='Calculate Body Fat'>");
             out.println("</form>");
->>>>>>> origin/MannnBodyFat
             out.println("</div>");
             
             // Calories Burn Rate Module
@@ -171,35 +164,29 @@ public class UserInfoServlet extends HttpServlet {
             out.println("</form>");
             out.println("</div>"); 
             
-            // ==========================================
-            // FIX: CALORIE DEFICIT MODULE NESTING
-            // ==========================================
+            // Calorie Deficit Module
             out.println("<div class='module-card card-deficit'>");
             out.println("<form action='CalorieDeficitServlet' method='POST' style='height: 100%; display: flex; flex-direction: column; justify-content: space-between;'>");
-            out.println("  <div>");
-            out.println("    <h3>📉 Calories Deficit</h3>");
-            out.println("    <p>Calculate your required daily calorie budget based on your target weight timeline.</p>");
+            out.println("<div>");
+            out.println("<h3>📉 Calories Deficit</h3>");
+            out.println("<p>Calculate your required daily calorie budget based on your target weight timeline.</p>");
             
-            // 1. Activity Level Selection
-            out.println("    <select id='activityLevel' name='activityLevel' required>");
-            out.println("      <option value='' disabled selected>Select Activity Level...</option>");
-            out.println("      <option value='1.2'>Sedentary (No Exercise)</option>");
-            out.println("      <option value='1.375'>Lightly Active (1-3 days/wk)</option>");
-            out.println("      <option value='1.55'>Moderately Active (3-5 days/wk)</option>");
-            out.println("      <option value='1.725'>Very Active (6-7 days/wk)</option>");
-            out.println("    </select>");
+            out.println("<select id='activityLevel' name='activityLevel' required>");
+            out.println("<option value='' disabled selected>Select Activity Level...</option>");
+            out.println("<option value='1.2'>Sedentary (No Exercise)</option>");
+            out.println("<option value='1.375'>Lightly Active (1-3 days/wk)</option>");
+            out.println("<option value='1.55'>Moderately Active (3-5 days/wk)</option>");
+            out.println("<option value='1.725'>Very Active (6-7 days/wk)</option>");
+            out.println("</select>");
             
-            // 2. Target Weight Input
-            out.println("    <input type='number' step='0.1' id='targetWeight' name='targetWeight' placeholder='Target Weight (kg)' min='30' max='300' required>");
+            out.println("<input type='number' step='0.1' id='targetWeight' name='targetWeight' placeholder='Target Weight (kg)' min='30' max='300' required>");
             
-            // 3. Weeks Duration Input
-            out.println("    <input type='number' id='weeks' name='weeks' placeholder='Timeframe (Weeks)' min='1' max='52' required>");
-            out.println("  </div>"); // Closes inner content wrapper safely
+            out.println("<input type='number' id='weeks' name='weeks' placeholder='Timeframe (Weeks)' min='1' max='52' required>");
+            out.println("</div>"); 
             
-            // 4. Submit Button
-            out.println("  <input type='submit' class='btn btn-red' value='Calculate Deficit'>");
+            out.println("<input type='submit' class='btn btn-red' value='Calculate Deficit'>");
             out.println("</form>");
-            out.println("</div>"); // Closes .module-card cleanly
+            out.println("</div>"); 
             
             // Protein Intake Module
             out.println("<div class='module-card card-protein'>");
