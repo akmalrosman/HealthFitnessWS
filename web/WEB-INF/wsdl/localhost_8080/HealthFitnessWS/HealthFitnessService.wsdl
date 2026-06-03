@@ -10,23 +10,17 @@
 <message name="calculateBMIResponse">
 <part name="parameters" element="tns:calculateBMIResponse"/>
 </message>
-<message name="calculateCaloriesBurnRate">
-<part name="parameters" element="tns:calculateCaloriesBurnRate"/>
+<message name="determineAge">
+<part name="parameters" element="tns:determineAge"/>
 </message>
-<message name="calculateCaloriesBurnRateResponse">
-<part name="parameters" element="tns:calculateCaloriesBurnRateResponse"/>
+<message name="determineAgeResponse">
+<part name="parameters" element="tns:determineAgeResponse"/>
 </message>
 <message name="displayUserInfo">
 <part name="parameters" element="tns:displayUserInfo"/>
 </message>
 <message name="displayUserInfoResponse">
 <part name="parameters" element="tns:displayUserInfoResponse"/>
-</message>
-<message name="determineAge">
-<part name="parameters" element="tns:determineAge"/>
-</message>
-<message name="determineAgeResponse">
-<part name="parameters" element="tns:determineAgeResponse"/>
 </message>
 <message name="bodyFatPercentage">
 <part name="parameters" element="tns:bodyFatPercentage"/>
@@ -40,28 +34,30 @@
 <message name="calculateProteinIntakeResponse">
 <part name="parameters" element="tns:calculateProteinIntakeResponse"/>
 </message>
-<message name="caloriesBurnRate">
-<part name="parameters" element="tns:caloriesBurnRate"/>
+<message name="calculateCaloriesDeficit">
+<part name="parameters" element="tns:calculateCaloriesDeficit"/>
 </message>
-<message name="caloriesBurnRateResponse">
-<part name="parameters" element="tns:caloriesBurnRateResponse"/>
+<message name="calculateCaloriesDeficitResponse">
+<part name="parameters" element="tns:calculateCaloriesDeficitResponse"/>
+</message>
+<message name="calculateCaloriesBurnRate">
+<part name="parameters" element="tns:calculateCaloriesBurnRate"/>
+</message>
+<message name="calculateCaloriesBurnRateResponse">
+<part name="parameters" element="tns:calculateCaloriesBurnRateResponse"/>
 </message>
 <portType name="HealthFitnessService">
 <operation name="calculateBMI">
 <input wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateBMIRequest" message="tns:calculateBMI"/>
 <output wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateBMIResponse" message="tns:calculateBMIResponse"/>
 </operation>
-<operation name="calculateCaloriesBurnRate">
-<input wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateRequest" message="tns:calculateCaloriesBurnRate"/>
-<output wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateResponse" message="tns:calculateCaloriesBurnRateResponse"/>
+<operation name="determineAge">
+<input wsam:Action="http://ws.fitness.com/HealthFitnessService/determineAgeRequest" message="tns:determineAge"/>
+<output wsam:Action="http://ws.fitness.com/HealthFitnessService/determineAgeResponse" message="tns:determineAgeResponse"/>
 </operation>
 <operation name="displayUserInfo">
 <input wsam:Action="http://ws.fitness.com/HealthFitnessService/displayUserInfoRequest" message="tns:displayUserInfo"/>
 <output wsam:Action="http://ws.fitness.com/HealthFitnessService/displayUserInfoResponse" message="tns:displayUserInfoResponse"/>
-</operation>
-<operation name="determineAge">
-<input wsam:Action="http://ws.fitness.com/HealthFitnessService/determineAgeRequest" message="tns:determineAge"/>
-<output wsam:Action="http://ws.fitness.com/HealthFitnessService/determineAgeResponse" message="tns:determineAgeResponse"/>
 </operation>
 <operation name="bodyFatPercentage">
 <input wsam:Action="http://ws.fitness.com/HealthFitnessService/bodyFatPercentageRequest" message="tns:bodyFatPercentage"/>
@@ -71,9 +67,13 @@
 <input wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateProteinIntakeRequest" message="tns:calculateProteinIntake"/>
 <output wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateProteinIntakeResponse" message="tns:calculateProteinIntakeResponse"/>
 </operation>
-<operation name="caloriesBurnRate">
-<input wsam:Action="http://ws.fitness.com/HealthFitnessService/caloriesBurnRateRequest" message="tns:caloriesBurnRate"/>
-<output wsam:Action="http://ws.fitness.com/HealthFitnessService/caloriesBurnRateResponse" message="tns:caloriesBurnRateResponse"/>
+<operation name="calculateCaloriesDeficit">
+<input wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateCaloriesDeficitRequest" message="tns:calculateCaloriesDeficit"/>
+<output wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateCaloriesDeficitResponse" message="tns:calculateCaloriesDeficitResponse"/>
+</operation>
+<operation name="calculateCaloriesBurnRate">
+<input wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateRequest" message="tns:calculateCaloriesBurnRate"/>
+<output wsam:Action="http://ws.fitness.com/HealthFitnessService/calculateCaloriesBurnRateResponse" message="tns:calculateCaloriesBurnRateResponse"/>
 </operation>
 </portType>
 <binding name="HealthFitnessServicePortBinding" type="tns:HealthFitnessService">
@@ -87,7 +87,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="calculateCaloriesBurnRate">
+<operation name="determineAge">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -97,15 +97,6 @@
 </output>
 </operation>
 <operation name="displayUserInfo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="determineAge">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -132,7 +123,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="caloriesBurnRate">
+<operation name="calculateCaloriesDeficit">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="calculateCaloriesBurnRate">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -16,6 +16,10 @@
         <servlet-name>CalorieDeficitServlet</servlet-name>
         <servlet-class>com.fitness.client.CalorieDeficitServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BMIServlet</servlet-name>
+        <servlet-class>com.fitness.client.BMIServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProteinIntakeServlet</servlet-name>
         <url-pattern>/ProteinIntakeServlet</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>CalorieDeficitServlet</servlet-name>
         <url-pattern>/CalorieDeficitServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BMIServlet</servlet-name>
+        <url-pattern>/BMIServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
