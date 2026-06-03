@@ -101,6 +101,10 @@ public class UserInfoServlet extends HttpServlet {
             out.println(".btn { color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 1em; font-weight: bold; transition: opacity 0.3s; margin-top: auto; }");
             out.println(".btn:hover { opacity: 0.85; }");
             out.println(".btn-blue { background-color: #3498DB; }");
+<<<<<<< HEAD
+=======
+            out.println(".btn-purple { background-color: #9B59B6; }"); // Added Purple button style
+>>>>>>> origin/MannnBodyFat
             out.println(".btn-orange { background-color: #E67E22; }");
             out.println(".btn-red { background-color: #E74C3C; }");
             out.println(".btn-green { background-color: #27AE60; }");
@@ -135,10 +139,20 @@ public class UserInfoServlet extends HttpServlet {
             out.println("</form>");
             out.println("</div>");
 
+<<<<<<< HEAD
             // Body Fat Module
             out.println("<div class='module-card card-fat'>");
             out.println("<div><h3>🩸 Body Fat Percentage</h3></div>");
             out.println("<button class='btn btn-disabled' disabled>Pending Teammate</button>");
+=======
+            // Body Fat Module - AKTIFKAN MODUL ANDA DI SINI
+            out.println("<div class='module-card card-fat'>");
+            out.println("<div><h3>🩸 Body Fat Percentage</h3>");
+            out.println("<p>Analyse your body composition to estimate the total percentage of body fat using biometric algorithms.</p></div>");
+            out.println("<form action='BodyFatServlet' method='POST'>");
+            out.println("<input type='submit' class='btn btn-purple' value='Calculate Body Fat'>");
+            out.println("</form>");
+>>>>>>> origin/MannnBodyFat
             out.println("</div>");
             
             // Calories Burn Rate Module

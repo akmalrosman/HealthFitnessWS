@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.fitness.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.fitness.com/">
+
+<xs:element name="bodyFatPercentage" type="tns:bodyFatPercentage"/>
+
+<xs:element name="bodyFatPercentageResponse" type="tns:bodyFatPercentageResponse"/>
+
+<xs:element name="calculateBMI" type="tns:calculateBMI"/>
+
+<xs:element name="calculateBMIResponse" type="tns:calculateBMIResponse"/>
+
+<xs:element name="calculateCaloriesBurnRate" type="tns:calculateCaloriesBurnRate"/>
+
+<xs:element name="calculateCaloriesBurnRateResponse" type="tns:calculateCaloriesBurnRateResponse"/>
+
+<xs:element name="calculateProteinIntake" type="tns:calculateProteinIntake"/>
+
+<xs:element name="calculateProteinIntakeResponse" type="tns:calculateProteinIntakeResponse"/>
+
+<xs:element name="caloriesBurnRate" type="tns:caloriesBurnRate"/>
+
+<xs:element name="caloriesBurnRateResponse" type="tns:caloriesBurnRateResponse"/>
+
+<xs:element name="determineAge" type="tns:determineAge"/>
+
+<xs:element name="determineAgeResponse" type="tns:determineAgeResponse"/>
+
+<xs:element name="displayUserInfo" type="tns:displayUserInfo"/>
+
+<xs:element name="displayUserInfoResponse" type="tns:displayUserInfoResponse"/>
+
+<xs:complexType name="calculateProteinIntake">
+<xs:sequence>
+<xs:element name="weightKg" type="xs:double"/>
+<xs:element name="goal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculateProteinIntakeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="determineAge">
+<xs:sequence>
+<xs:element name="icNumber" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="determineAgeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculateCaloriesBurnRate">
+<xs:sequence>
+<xs:element name="weight" type="xs:double"/>
+<xs:element name="height" type="xs:double"/>
+<xs:element name="age" type="xs:int"/>
+<xs:element name="gender" type="xs:string" minOccurs="0"/>
+<xs:element name="activityMultiplier" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculateCaloriesBurnRateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculateBMI">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="calculateBMIResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="displayUserInfo">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="icNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="gender" type="xs:string" minOccurs="0"/>
+<xs:element name="weight" type="xs:double"/>
+<xs:element name="height" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="displayUserInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bodyFatPercentage">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="bodyFatPercentageResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="caloriesBurnRate">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="caloriesBurnRateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

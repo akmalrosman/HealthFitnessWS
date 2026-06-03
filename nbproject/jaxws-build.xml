@@ -45,8 +45,8 @@
     </target>
     <target name="wsimport-client-HealthFitnessService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/HealthFitnessService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HealthFitnessService" destdir="${build.generated.dir}/jax-wsCache/HealthFitnessService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/HealthFitnessService/wsdl/localhost_8080/HealthFitnessWS-master/HealthFitnessService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/HealthFitnessWS-master/HealthFitnessService?wsdl" xnocompile="true" xendorsed="true" package="com.fitness.client.stub">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/HealthFitnessService/wsdl/localhost_8080/HealthFitnessWS-master/HealthFitnessService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/HealthFitnessService" destdir="${build.generated.dir}/jax-wsCache/HealthFitnessService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/HealthFitnessService/wsdl/localhost_8080/HealthFitnessWS-AdamPaanCaloriesDeficit2/HealthFitnessService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/HealthFitnessWS-AdamPaanCaloriesDeficit2/HealthFitnessService?wsdl" xnocompile="true" xendorsed="true" package="com.fitness.client.stub">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/HealthFitnessService/wsdl/localhost_8080/HealthFitnessWS-AdamPaanCaloriesDeficit2/HealthFitnessService.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/HealthFitnessService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">

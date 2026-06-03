@@ -68,6 +68,36 @@ public class HealthFitnessService {
         return info.toString();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Body Fat Percentage 
+     */
+    @WebMethod(operationName = "bodyFatPercentage")
+    public double bodyFatPercentage(
+            @WebParam(name = "height") double height, 
+            @WebParam(name = "weight") double weight,
+            @WebParam(name = "age") int age,
+            @WebParam(name = "gender") String gender) {
+        
+        if (height <= 0) {
+            throw new WebServiceException("SOAP FAULT: Height must be greater than 0.");
+        }
+
+        double bmii = weight / (height * height);
+        double bodyFat = 0.0;
+
+        if (gender.equalsIgnoreCase("male")) {
+            bodyFat = (1.20 * bmii) + (0.23 * age) - 16.2;
+        } else if (gender.equalsIgnoreCase("female")) {
+            bodyFat = (1.20 * bmii) + (0.23 * age) - 5.4;
+        } else {
+            throw new WebServiceException("SOAP FAULT: Invalid gender. Choose 'male' or 'female'.");
+        }
+        
+        return Math.round(bodyFat * 100.0) / 100.0;
+    }
+>>>>>>> origin/MannnBodyFat
 
     /**
      * Body Calories Burn Rate
