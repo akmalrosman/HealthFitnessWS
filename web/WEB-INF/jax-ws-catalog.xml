@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/HealthFitnessWS/HealthFitnessService?WSDL" uri="wsdl/localhost_8080/HealthFitnessWS/HealthFitnessService.wsdl"/>
+    <system systemId="http://localhost:8080/HealthFitnessWS/HealthFitnessService?xsd=1" uri="wsdl/localhost_8080/HealthFitnessWS/HealthFitnessService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HealthFitnessWS/HealthFitnessService?wsdl" uri="wsdl/localhost_8080/HealthFitnessWS/HealthFitnessService.wsdl"/>
+    <system systemId="http://localhost:8080/HealthFitnessWS-master/HealthFitnessService?wsdl" uri="wsdl/localhost_8080/HealthFitnessWS-master/HealthFitnessService.wsdl"/>
+    <system systemId="http://localhost:8080/HealthFitnessWS-master/HealthFitnessService?xsd=1" uri="wsdl/localhost_8080/HealthFitnessWS-master/HealthFitnessService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HealthFitnessWS-AdamPaanCaloriesDeficit2/HealthFitnessService?wsdl" uri="wsdl/localhost_8080/HealthFitnessWS-AdamPaanCaloriesDeficit2/HealthFitnessService.wsdl"/>
+    <system systemId="http://localhost:8080/HealthFitnessWS-AdamPaanCaloriesDeficit2/HealthFitnessService?xsd=1" uri="wsdl/localhost_8080/HealthFitnessWS-AdamPaanCaloriesDeficit2/HealthFitnessService.xsd_1.xsd"/>
+</catalog>
