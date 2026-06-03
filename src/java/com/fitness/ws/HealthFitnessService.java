@@ -68,7 +68,9 @@ public class HealthFitnessService {
         return info.toString();
     }
     
-    
+    /**
+     * BMI 
+     */
     @WebMethod(operationName = "calculateBMI")
     public double calculateBMI(
             @WebParam(name = "weight") double weight, 
@@ -145,6 +147,7 @@ public class HealthFitnessService {
         return Math.round(tdee * 100.0) / 100.0;
     }
 
+
     /**
      * Calories Deficit
      */
@@ -208,6 +211,7 @@ public class HealthFitnessService {
                 + String.format("%.0f", Math.abs(dailyDeficitSurplus)) + " kcal. <strong>Recommended Daily Intake: " 
                 + String.format("%.0f", recommendedIntake) + " kcal</strong>.";
     }
+
 
     /**
      * Protein Intake Daily

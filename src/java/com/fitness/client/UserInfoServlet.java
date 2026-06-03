@@ -138,7 +138,8 @@ public class UserInfoServlet extends HttpServlet {
             out.println("<input type='submit' class='btn btn-blue' value='Calculate BMI'>");
             out.println("</form>");
             out.println("</div>");
-            
+       
+     
             // Body Fat Module
             out.println("<div class='module-card card-fat'>");
             out.println("<div><h3>🩸 Body Fat Percentage</h3>");
@@ -148,6 +149,7 @@ public class UserInfoServlet extends HttpServlet {
             out.println("</form>");
             out.println("</div>");
             
+
             // Calories Burn Rate Module
             out.println("<div class='module-card card-burn'>");
             out.println("<div><h3>🔥 Calories Burn Rate</h3>");
@@ -164,6 +166,7 @@ public class UserInfoServlet extends HttpServlet {
             out.println("</form>");
             out.println("</div>"); 
             
+
             // Calorie Deficit Module
             out.println("<div class='module-card card-deficit'>");
             out.println("<form action='CalorieDeficitServlet' method='POST' style='height: 100%; display: flex; flex-direction: column; justify-content: space-between;'>");
@@ -188,6 +191,7 @@ public class UserInfoServlet extends HttpServlet {
             out.println("</form>");
             out.println("</div>"); 
             
+
             // Protein Intake Module
             out.println("<div class='module-card card-protein'>");
             out.println("<div><h3>🥩 Daily Protein Intake</h3>");

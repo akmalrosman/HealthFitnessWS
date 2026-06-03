@@ -27,7 +27,7 @@ public class BMIServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         try {
-            // 1. Get Data from Session (NO NEED FOR HTML INPUTS!)
+            // Get Data from Session (NO NEED FOR HTML INPUTS!)
             HttpSession session = request.getSession();
             Double weight = (Double) session.getAttribute("userWeight");
             Double height = (Double) session.getAttribute("userHeight");
@@ -38,11 +38,11 @@ public class BMIServlet extends HttpServlet {
                 return;
             }
             
-            // 2. Invoke SOAP Web Service
+            // Invoke SOAP Web Service
             HealthFitnessService port = service.getHealthFitnessServicePort();
             double bmiResult = port.calculateBMI(weight, height);
             
-            // 3. Determine the BMI Category & Color Alert
+            // Determine the BMI Category & Color Alert
             String category = "";
             String alertColor = "";
             
@@ -60,7 +60,7 @@ public class BMIServlet extends HttpServlet {
                 alertColor = "#E74C3C"; // Red
             }
             
-            // 4. Print Blue-Themed UI
+            // Print Blue-Themed UI
             out.println("<!DOCTYPE html><html><head><title>BMI Result</title>");
             out.println("<style>");
             out.println("body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #F4F7F6; color: #333; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }");
